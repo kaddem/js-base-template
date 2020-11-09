@@ -7,25 +7,30 @@ body {
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
+h2 {
+    margin-top: 0;
+    line-height: 1;
+}
+
 /* MODULE GRID */
 
 .container {
-    width: 1280px;
+    width: 1024px;
     margin: 0 auto;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .row {
     display: flex;
     flex-wrap: wrap;
-    margin-left: -16px;
-    margin-right: -16px;
+    margin-left: -10px;
+    margin-right: -10px;
 }
 
 [class^="col"] {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .col-1 { width: 8.33%; }
@@ -43,3 +48,112 @@ body {
 
 
 /* BLOCK .PLACES */
+
+.places {
+    padding: 50px 0;
+    min-height: 100vh;
+    background-color: #fdf9f9;
+}
+
+.places__description {
+    position: relative;
+    width: 500px;
+    margin-bottom: 70px;
+    padding-bottom: 20px;
+}
+
+.places__description:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100px;
+    height: 3px;
+    background-color: #8b0000;
+}
+
+/* IMAGE .place-img */
+
+.place-img {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.place-img--visible {
+    display: block;
+}
+
+
+/* BLOCK .PLACE */
+.place-desc {
+    display: none;
+    margin-bottom: 40px;
+}
+
+.place-desc--visible {
+    display: block;
+}
+
+.place-links {
+    display: flex;
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.place-links__item {
+    margin-right: 10px;
+}
+
+.place-links__link {
+    color: #8b0000;
+}
+
+/* КАРТИНКИ ТАБЫ ДЛЯ ПЕРЕКЛЮЧЕНИЯ КОНТЕНТА */
+.place-tab {
+    display: block;
+    position: relative;
+    padding-top: 100%;
+    color: #fff;
+    overflow: hidden;
+}
+
+.place-tab:hover .place-tab__desc {
+    transform: translateY(-100%);
+}
+
+.place-tab--active .place-tab__inner:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 0 0 4px #8b0000;
+    z-index: 1;
+}
+
+.place-tab__inner {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.place-tab__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.place-tab__desc {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, .8);
+    transition: all .3s;
+}
